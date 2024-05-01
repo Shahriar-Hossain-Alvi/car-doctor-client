@@ -41,7 +41,7 @@ const Navbar = () => {
                     <CiSearch className="h-5 w-5" />
                 </button>
 
-                <a className="btn btn-outline border-[#FF3811] hover:border-[#FF3811] hover:bg-[#FF3811] hover:text-white ">Appointment
+                <a className="btn btn-outline border-primaryColor hover:border-primaryColor hover:bg-primaryColor hover:text-white ">Appointment
                 </a>
             </div>
         </div>

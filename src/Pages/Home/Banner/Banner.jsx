@@ -16,8 +16,8 @@ const Banner = () => {
                         <h2 className="text-6xl font-bold">Affordable Price For Car Servicing</h2>
                         <p>There are many variations of passages of  available, but the majority have suffered alteration in some form</p>
                         <div className="flex gap-3">
-                            <button className="btn bg-[#FF3811] border-[#FF3811] text-white hover:border-white hover:bg-stone-500">Discover More</button>
-                            <button className="btn bg-[#FF3811] border-[#FF3811] text-white hover:border-white hover:bg-stone-500">Latest Project</button>
+                            <button className="btn bg-primaryColor border-primaryColor text-white hover:border-white hover:bg-stone-500">Discover More</button>
+                            <button className="btn bg-primaryColor border-primaryColor text-white hover:border-white hover:bg-stone-500">Latest Project</button>
                         </div>
                     </div>
                 </div>
@@ -33,8 +33,8 @@ const Banner = () => {
                         <h2 className="text-6xl font-bold">Affordable Price For Car Servicing</h2>
                         <p>There are many variations of passages of  available, but the majority have suffered alteration in some form</p>
                         <div className="flex gap-3">
-                            <button className="btn bg-[#FF3811] border-[#FF3811] text-white hover:border-white hover:bg-stone-500">Discover More</button>
-                            <button className="btn bg-[#FF3811] border-[#FF3811] text-white hover:border-white hover:bg-stone-500">Latest Project</button>
+                            <button className="btn bg-primaryColor border-primaryColor text-white hover:border-white hover:bg-stone-500">Discover More</button>
+                            <button className="btn bg-primaryColor border-primaryColor text-white hover:border-white hover:bg-stone-500">Latest Project</button>
                         </div>
                     </div>
                 </div>
@@ -50,8 +50,8 @@ const Banner = () => {
                         <h2 className="text-6xl font-bold">Affordable Price For Car Servicing</h2>
                         <p>There are many variations of passages of  available, but the majority have suffered alteration in some form</p>
                         <div className="flex gap-3">
-                            <button className="btn bg-[#FF3811] border-[#FF3811] text-white hover:border-white hover:bg-stone-500">Discover More</button>
-                            <button className="btn bg-[#FF3811] border-[#FF3811] text-white hover:border-white hover:bg-stone-500">Latest Project</button>
+                            <button className="btn bg-primaryColor border-primaryColor text-white hover:border-white hover:bg-stone-500">Discover More</button>
+                            <button className="btn bg-primaryColor border-primaryColor text-white hover:border-white hover:bg-stone-500">Latest Project</button>
                         </div>
                     </div>
                 </div>
@@ -67,8 +67,8 @@ const Banner = () => {
                         <h2 className="text-6xl font-bold">Affordable Price For Car Servicing</h2>
                         <p>There are many variations of passages of  available, but the majority have suffered alteration in some form</p>
                         <div className="flex gap-3">
-                            <button className="btn bg-[#FF3811] border-[#FF3811] text-white hover:border-white hover:bg-stone-500">Discover More</button>
-                            <button className="btn bg-[#FF3811] border-[#FF3811] text-white hover:border-white hover:bg-stone-500">Latest Project</button>
+                            <button className="btn bg-primaryColor border-primaryColor text-white hover:border-white hover:bg-stone-500">Discover More</button>
+                            <button className="btn bg-primaryColor border-primaryColor text-white hover:border-white hover:bg-stone-500">Latest Project</button>
                         </div>
                     </div>
                 </div>
@@ -84,8 +84,8 @@ const Banner = () => {
                         <h2 className="text-6xl font-bold">Affordable Price For Car Servicing</h2>
                         <p>There are many variations of passages of  available, but the majority have suffered alteration in some form</p>
                         <div className="flex gap-3">
-                            <button className="btn bg-[#FF3811] border-[#FF3811] text-white hover:border-white hover:bg-stone-500">Discover More</button>
-                            <button className="btn bg-[#FF3811] border-[#FF3811] text-white hover:border-white hover:bg-stone-500">Latest Project</button>
+                            <button className="btn bg-primaryColor border-primaryColor text-white hover:border-white hover:bg-stone-500">Discover More</button>
+                            <button className="btn bg-primaryColor border-primaryColor text-white hover:border-white hover:bg-stone-500">Latest Project</button>
                         </div>
                     </div>
                 </div>
@@ -101,8 +101,8 @@ const Banner = () => {
                         <h2 className="text-6xl font-bold">Affordable Price For Car Servicing</h2>
                         <p>There are many variations of passages of  available, but the majority have suffered alteration in some form</p>
                         <div className="flex gap-3">
-                            <button className="btn bg-[#FF3811] border-[#FF3811] text-white hover:border-white hover:bg-stone-500">Discover More</button>
-                            <button className="btn bg-[#FF3811] border-[#FF3811] text-white hover:border-white hover:bg-stone-500">Latest Project</button>
+                            <button className="btn bg-primaryColor border-primaryColor text-white hover:border-white hover:bg-stone-500">Discover More</button>
+                            <button className="btn bg-primaryColor border-primaryColor text-white hover:border-white hover:bg-stone-500">Latest Project</button>
                         </div>
                     </div>
                 </div>
