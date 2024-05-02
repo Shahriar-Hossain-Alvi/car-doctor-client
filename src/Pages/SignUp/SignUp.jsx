@@ -1,13 +1,12 @@
 import { Link } from "react-router-dom";
 import loginImg from "../../assets/images/login/login.svg";
 
-const Login = () => {
+const SignUp = () => {
 
-    const handleLogin = e =>{
+    const handleSignUp = e => {
         e.preventDefault();
         console.log("Working");
     }
-
 
     return (
         <div className="hero mt-8 mb-36">
@@ -18,13 +17,19 @@ const Login = () => {
 
 
                 <div className="card shrink-0 w-full max-w-md border border-dotted border-[Dark 05] p-12 w-1/2">
-                    <h1 className="text-5xl text-center font-medium">Login</h1>
-                    <form onSubmit={handleLogin} className="card-body">
+                    <h1 className="text-5xl text-center font-medium">Sign Up</h1>
+                    <form onSubmit={handleSignUp} className="card-body">
                         <div className="form-control">
                             <label className="label">
                                 <span className="label-text">Email</span>
                             </label>
-                            <input name="email" type="email"  placeholder="Your email" className="input input-bordered" required />
+                            <input name="name" type="text" placeholder="Your name" className="input input-bordered" required />
+                        </div>
+                        <div className="form-control">
+                            <label className="label">
+                                <span className="label-text">Email</span>
+                            </label>
+                            <input name="email" type="email" placeholder="Your email" className="input input-bordered" required />
                         </div>
                         <div className="form-control">
                             <label className="label">
@@ -36,12 +41,12 @@ const Login = () => {
                             </label>
                         </div>
                         <div className="form-control mt-6">
-                            <input className="btn bg-primaryColor text-white hover:bg-transparent hover:text-primaryColor hover:border-primaryColor" type="submit" value="Sign Up" />
+                            <input className="btn bg-primaryColor text-white hover:bg-transparent hover:text-primaryColor hover:border-primaryColor" type="submit" value="Sign In" />
                         </div>
                     </form>
 
                     <div className="text-center">
-                        <p className="text-lg">Does not  have an account? <Link className="text-primaryColor" to="/signup">Sign Up</Link></p>
+                        <p className="text-lg">Have an account? <Link className="text-primaryColor" to="/login">Login</Link></p>
                     </div>
                 </div>
             </div>
@@ -49,4 +54,4 @@ const Login = () => {
     );
 };
 
-export default Login;
+export default SignUp;
