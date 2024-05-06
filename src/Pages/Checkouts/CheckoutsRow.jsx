@@ -1,16 +1,17 @@
 import PropTypes from 'prop-types';
 
+const CheckoutsRow = ({ checkout, handleDelete,handleApprove }) => {
 
-const CheckoutsRow = ({ checkout }) => {
+    const { _id, serviceImage, serviceName, servicePrice, bookingDate, customerMessage, status } = checkout;
 
-    const { serviceImage, serviceName, servicePrice, bookingDate, customerMessage } = checkout;
+    
 
     return (
         <tr>
             <th>
-                <label>
-                    <input type="checkbox" className="checkbox" />
-                </label>
+                <button onClick={() => handleDelete(_id)} className="btn btn-sm btn-circle bg-primaryColor text-white">
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" /></svg>
+                </button>
             </th>
             <td>
                 <div className="flex items-center gap-3">
@@ -27,14 +28,16 @@ const CheckoutsRow = ({ checkout }) => {
                 </div>
             </td>
             <td className='w-64'>
-                {customerMessage.length>0 ? customerMessage : 'Did Not wrote any messages' }
+                {customerMessage.length > 0 ? customerMessage : 'Did Not wrote any messages'}
             </td>
             <td>
                 ${servicePrice}
             </td>
             <td>{bookingDate}</td>
             <th>
-                <button className="btn bg-primaryColor text-white">Pending</button>
+                {
+                    status === 'confirm' ? <span className="badge py-6 rounded-lg badge-success text-white">Approved</span> :
+                    <button onClick={()=>handleApprove(_id)} className="btn bg-primaryColor text-white">Approve</button>}
             </th>
         </tr>
     );
@@ -42,6 +45,8 @@ const CheckoutsRow = ({ checkout }) => {
 
 CheckoutsRow.propTypes = {
     checkout: PropTypes.object,
+    handleDelete: PropTypes.func,
+    handleApprove: PropTypes.func,
 }
 
 export default CheckoutsRow;
