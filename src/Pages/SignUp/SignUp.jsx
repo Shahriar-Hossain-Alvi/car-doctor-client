@@ -1,10 +1,13 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import loginImg from "../../assets/images/login/login.svg";
 import { useContext } from "react";
 import { AuthContext } from "../../Providers/AuthProvider";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const SignUp = () => {
     const { createUser } = useContext(AuthContext);
+    const navigate = useNavigate();
 
     const handleSignUp = e => {
         e.preventDefault();
@@ -18,6 +21,10 @@ const SignUp = () => {
                 const user = result.user;
                 console.log(user);
                 form.reset();
+                toast( `Welcome ${name}!`);
+                setTimeout(() => {
+                    navigate('/');
+                }, 2000)
             })
             .catch(error => {
                 console.error(error);
@@ -26,6 +33,7 @@ const SignUp = () => {
 
     return (
         <div className="hero mt-8 mb-36">
+            <ToastContainer></ToastContainer>
             <div className="hero-content flex-col lg:flex-row">
                 <div className="w-1/2 mr-10">
                     <img src={loginImg} alt="" />
@@ -37,7 +45,7 @@ const SignUp = () => {
                     <form onSubmit={handleSignUp} className="card-body">
                         <div className="form-control">
                             <label className="label">
-                                <span className="label-text">Email</span>
+                                <span className="label-text">Name</span>
                             </label>
                             <input name="name" type="text" placeholder="Your name" className="input input-bordered" required />
                         </div>

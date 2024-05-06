@@ -4,6 +4,8 @@ import { HiOutlineShoppingBag } from "react-icons/hi";
 import { CiSearch } from "react-icons/ci";
 import { useContext } from "react";
 import { AuthContext } from "../../Providers/AuthProvider";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const Navbar = () => {
     const { user, logOut } = useContext(AuthContext);
@@ -11,7 +13,7 @@ const Navbar = () => {
     const handleLogOut = () => {
         logOut()
             .then(() => {
-                alert('Logout Successfully');
+                toast( "logout successful");
             })
             .catch(error => {
                 console.error(error);
@@ -20,6 +22,9 @@ const Navbar = () => {
 
     const navLinks = <>
         <li><Link to="/">Home</Link></li>
+        {
+            user?.email? <li><Link to="/checkouts">My Checkouts</Link></li> : <></>
+        }
         <li><Link to="/about">About</Link></li>
         <li><Link to="/services">Services</Link></li>
         <li><Link to="/blog">Blog</Link></li>
@@ -29,6 +34,7 @@ const Navbar = () => {
 
     return (
         <div className="navbar h-20 mb-4 relative z-40">
+            <ToastContainer></ToastContainer>
             <div className="navbar-start">
                 <div className="dropdown">
                     <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -36,6 +42,39 @@ const Navbar = () => {
                     </div>
                     <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
                         {navLinks}
+                        <li>
+                            <details>
+                                <summary>User</summary>
+                                <ul className="p-2 flex flex-col gap-2">
+                                    {
+                                        user ?
+                                            <>
+                                                <li>
+                                                    <button onClick={handleLogOut} className="btn btn-sm text-white  bg-primaryColor">LogOut</button>
+                                                </li>
+                                            </>
+                                            :
+                                            <>
+                                                <li>
+                                                    <Link className="btn btn-sm bg-primaryColor text-white" to="/login">
+                                                        <button>
+                                                            Login
+                                                        </button>
+                                                    </Link>
+                                                </li>
+                                                <li>
+                                                    <Link className="btn btn-sm bg-primaryColor text-white" to="/signup">
+                                                        <button>
+                                                            Sign Up
+                                                        </button>
+                                                    </Link>
+                                                </li>
+                                            </>
+                                    }
+
+                                </ul>
+                            </details>
+                        </li>
                     </ul>
                 </div>
                 <Link to="/" className="">

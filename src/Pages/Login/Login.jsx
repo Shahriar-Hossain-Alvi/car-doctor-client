@@ -1,11 +1,15 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import loginImg from "../../assets/images/login/login.svg";
 import { useContext } from "react";
 import { AuthContext } from "../../Providers/AuthProvider";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const Login = () => {
 
     const { signInUser } = useContext(AuthContext);
+
+    const navigate = useNavigate();
 
     const handleLogin = e => {
         e.preventDefault();
@@ -20,6 +24,8 @@ const Login = () => {
                 const user = result.user;
                 console.log(user);
                 form.reset();
+                toast(`Logged in successful!`);
+                navigate('/');
             })
             .catch(error => {
                 console.error(error);
@@ -33,6 +39,7 @@ const Login = () => {
                 <div className="w-1/2 mr-10">
                     <img src={loginImg} alt="" />
                 </div>
+                <ToastContainer></ToastContainer>
 
 
                 <div className="card shrink-0 w-full max-w-md border border-dotted border-[Dark 05] p-12 w-1/2">
