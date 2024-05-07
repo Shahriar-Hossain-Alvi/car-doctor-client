@@ -1,13 +1,15 @@
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import loginImg from "../../assets/images/login/login.svg";
 import { useContext } from "react";
 import { AuthContext } from "../../Providers/AuthProvider";
-import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import axios from "axios";
 
 const Login = () => {
 
     const { signInUser } = useContext(AuthContext);
+    const location = useLocation();
 
     const navigate = useNavigate();
 
@@ -17,15 +19,22 @@ const Login = () => {
         const email = form.email.value;
         const password = form.password.value;
 
-        console.log(email, password);
-
         signInUser(email, password)
             .then(result => {
-                const user = result.user;
-                console.log(user);
+                const loggedInUser = result.user;
+                console.log(loggedInUser);
+                const user = { email };
+                //get access token
+                axios.post('http://localhost:5000/jwt', user, {withCredentials: true})
+                    .then(res => {
+                        console.log(res.data);
+                        if(res.data.success){
+                            navigate(location?.state ? location?.state : '/');
+                        }
+                    })
+                    .catch();
+
                 form.reset();
-                toast(`Logged in successful!`);
-                navigate('/');
             })
             .catch(error => {
                 console.error(error);
@@ -39,7 +48,6 @@ const Login = () => {
                 <div className="w-1/2 mr-10">
                     <img src={loginImg} alt="" />
                 </div>
-                <ToastContainer></ToastContainer>
 
 
                 <div className="card shrink-0 w-full max-w-md border border-dotted border-[Dark 05] p-12 w-1/2">

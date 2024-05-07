@@ -2,6 +2,7 @@ import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../Providers/AuthProvider";
 import CheckoutsRow from "./CheckoutsRow";
 import Swal from 'sweetalert2'
+import axios from "axios";
 
 const Checkouts = () => {
 
@@ -12,12 +13,20 @@ const Checkouts = () => {
 
 
     useEffect(() => {
-        fetch(url)
-            .then(res => res.json())
-            .then(data => {
-                console.log(data);
-                setCheckouts(data);
-            })
+        //using axios
+        axios.get(url, {withCredentials: true})
+        .then(res=>{
+            setCheckouts(res.data);
+        })
+
+
+        //using fetch
+        // fetch(url)
+        //     .then(res => res.json())
+        //     .then(data => {
+        //         console.log(data);
+        //         setCheckouts(data);
+        //     })
     }, [url]);
 
 
